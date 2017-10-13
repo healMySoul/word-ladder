@@ -1,0 +1,17 @@
+{
+    "name": "healmysoul/word-ladder",
+    "description": "Fly to Elephant",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Sanakoev Anton",
+            "email": "totum42@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "WL\\": "src/"
+        }
+    }
+}
