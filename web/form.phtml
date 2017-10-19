@@ -1,0 +1,32 @@
+<form action="index.php" method="get">
+    <input type="text" name="startWord" value="<?= htmlspecialchars($startWord) ?>" autocomplete="off">
+    <input type="submit" id="submitBtn" value="convert to">
+    <input type="text" name="endWord" value="<?= htmlspecialchars($endWord) ?>" autocomplete="off">
+</form>
+
+<article id="solutions">
+    <?php if (empty($solution)): ?>
+        <h1>Решений не найдено</h1>
+    <?php else: ?>
+        <h1>Решения: </h1>
+
+        <?php foreach ($solutions as $solution): ?>
+            <section class="solution">
+                <ol>
+                    <?php foreach ($solution as $word): ?>
+                        <li><?= $word ?></li>
+                    <?php endforeach; ?>
+                </ol>
+            </section>
+        <?php endforeach; ?>
+    <?php endif; ?>
+</article>
+
+<script>
+    document.getElementById('submitBtn').onclick = function() {
+        this.form.submit();
+        this.disabled = true;
+        this.value='...converting...';
+        document.getElementById('solutions').outerHTML = '';
+    }
+</script>
